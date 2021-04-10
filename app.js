@@ -51,7 +51,7 @@ const {
     stripTags,
     truncate,
     editIcon,
-    select
+    select,
 } = require('./helpers/hbs')
 
 //HandleBars
@@ -61,7 +61,7 @@ app.engine('.hbs', exphbs({
         stripTags,
         truncate,
         editIcon,
-        select
+        select,
     },
     defaultLayout: 'main',
     extname: '.hbs'

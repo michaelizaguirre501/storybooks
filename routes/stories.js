@@ -1,6 +1,3 @@
-const {
-    response
-} = require('express')
 const express = require('express')
 const router = express.Router()
 const {
@@ -15,7 +12,7 @@ router.get('/add', ensureAuth, (req, res) => {
     res.render('stories/add')
 })
 
-// @desc add new story process add form
+// @desc  process add form
 // @ route POST /stories
 router.post('/', ensureAuth, async (req, res) => {
     try {
@@ -57,6 +54,7 @@ router.get('/:id', ensureAuth, async (req, res) => {
         let story = await Story.findById(req.params.id)
             .populate('user')
             .lean()
+
         if (!story) {
             return res.render('error/404')
         }
@@ -69,6 +67,8 @@ router.get('/:id', ensureAuth, async (req, res) => {
         res.render('error/404')
     }
 })
+
+
 
 // @desc Show edit
 // @ route GET /stories/edit/:id
@@ -158,6 +158,7 @@ router.get('/user/:userId', ensureAuth, async (req, res) => {
         res.render('error/500')
     }
 })
+
 
 
 module.exports = router
