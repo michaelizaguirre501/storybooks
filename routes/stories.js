@@ -123,6 +123,7 @@ router.put('/:id', ensureAuth, async (req, res) => {
         res.redirect('error/500')
     }
 
+
 })
 
 // @desc delete story
