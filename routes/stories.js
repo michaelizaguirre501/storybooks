@@ -28,6 +28,7 @@ router.post('/', ensureAuth, async (req, res) => {
 // @desc Show all stories
 // @ route GET /stories
 router.get('https://storybooks-izaguirre.herokuapp.com/', ensureAuth, async (req, res) => {
+    console.log(req)
     try {
         const stories = await Story.find({
                 status: 'public'
