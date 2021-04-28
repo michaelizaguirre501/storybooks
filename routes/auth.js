@@ -10,7 +10,7 @@ router.get('/google', passport.authenticate('google', {
 
 // @desc google auth callback
 // @ route GET /auth/google/callback
-router.get("https://storybooks-izaguirre.herokuapp.com/auth/heroku/callback", passport.authenticate('google', {
+router.get("https://storybooks-izaguirre.herokuapp.com/auth/google/callback", passport.authenticate('google', {
     failureRedirect: '/'
 }), (req, res) => {
     res.redirect('/dashboard')
