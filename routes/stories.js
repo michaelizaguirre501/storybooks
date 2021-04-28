@@ -38,7 +38,7 @@ router.get('/', ensureAuth, async (req, res) => {
             })
             .lean()
 
-        res.render('views/stories/index', {
+        res.render('/stories/index', {
             stories,
         })
     } catch (err) {
